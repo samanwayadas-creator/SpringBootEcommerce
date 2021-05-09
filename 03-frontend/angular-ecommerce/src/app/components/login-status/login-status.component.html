@@ -1,0 +1,18 @@
+<div class="login-status-header">
+
+    <div class="jumbotron jumbotron-fluid" *ngIf="isAuthenticated && userFullName" class="login-status-user-info">
+        <div class="container">
+            <p class="display-6">Welcome back {{ userFullName }}!</p>
+        </div>
+    </div>
+
+    <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn ml-1">Login</button>
+
+    <button *ngIf="isAuthenticated" (click)="logout()" class="security-btn ml-1">Logout</button>
+
+    <button *ngIf="isAuthenticated" routerLink="/members" class="security-btn ml-1">Member</button>
+
+    <button *ngIf="isAuthenticated" routerLink="/order-history" class="security-btn ml-1">Your Orders</button>
+
+
+</div>
